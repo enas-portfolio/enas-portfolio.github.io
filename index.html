@@ -1,164 +1,885 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Enas Mostafa | UX Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX Designer Portfolio</title>
+  <meta name="description" content="Professional UX designer portfolio template with featured case studies, design principles, and contact details." />
+  <meta property="og:title" content="UX Designer Portfolio" />
+  <meta property="og:description" content="A polished HTML portfolio template for UX designers with separate case study links." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=boska@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-2: #fbfbf9;
+      --color-surface-offset: #edeae5;
+      --color-border: #d4d1ca;
+      --color-divider: #dcd9d5;
+      --color-text: #28251d;
+      --color-text-muted: #6f6d67;
+      --color-text-faint: #a09d96;
+      --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #cedcd8;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(40, 37, 29, 0.06);
+      --shadow-md: 0 8px 24px rgba(40, 37, 29, 0.08);
+      --shadow-lg: 0 20px 44px rgba(40, 37, 29, 0.12);
+      --content-default: 1120px;
+      --font-display: 'Boska', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f8f9fb;
-            color: #222;
-        }
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-2: #201f1d;
+      --color-surface-offset: #262421;
+      --color-border: #393836;
+      --color-divider: #2a2927;
+      --color-text: #e4e2de;
+      --color-text-muted: #afaca6;
+      --color-text-faint: #797671;
+      --color-text-inverse: #161513;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #74b0b8;
+      --color-primary-highlight: #223336;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 20px 44px rgba(0, 0, 0, 0.42);
+    }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+    .skip-link {
+      position: absolute;
+      left: var(--space-4);
+      top: -3rem;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md);
+      z-index: 200;
+    }
+    .skip-link:focus { top: var(--space-4); }
 
-        h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
+    .container {
+      width: min(calc(100% - 2rem), var(--content-default));
+      margin-inline: auto;
+    }
 
-        p {
-            line-height: 1.6;
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+    }
 
-        .hero {
-            margin-bottom: 40px;
-        }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+    }
 
-        .projects {
-            display: grid;
-            gap: 20px;
-        }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: 0.2s;
-        }
+    .brand-mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: var(--radius-lg);
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--color-primary-highlight), color-mix(in srgb, var(--color-primary) 12%, var(--color-surface)));
+      color: var(--color-primary);
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary) 15%, transparent);
+    }
 
-        .card:hover {
-            transform: translateY(-3px);
-        }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
 
-        .card a {
-            text-decoration: none;
-            color: #0066ff;
-            font-weight: bold;
-        }
+    .nav a,
+    .theme-toggle {
+      font-size: var(--text-sm);
+      padding: 0.75rem 0.95rem;
+      border-radius: var(--radius-full);
+      color: var(--color-text-muted);
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    .nav a:hover,
+    .nav a:focus-visible,
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      color: var(--color-text);
+      background: color-mix(in srgb, var(--color-primary) 9%, var(--color-surface));
+    }
 
-        .skill {
-            background: #e8f0ff;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
+    .hero {
+      padding: clamp(var(--space-16), 10vw, var(--space-32)) 0 var(--space-16);
+    }
 
-        footer {
-            margin-top: 60px;
-            font-size: 14px;
-            color: #666;
-        }
-    </style>
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-8);
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.96;
+      max-width: 9ch;
+      margin-bottom: var(--space-6);
+      font-weight: 500;
+    }
+
+    .hero p {
+      color: var(--color-text-muted);
+      max-width: 60ch;
+      margin-bottom: var(--space-8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-height: 48px;
+      padding: 0.95rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      transition: transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary {
+      background: var(--color-surface);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+    }
+
+    .hero-panel,
+    .card,
+    .timeline-item,
+    .contact-card,
+    .quote-panel {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, white), var(--color-surface));
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-panel {
+      padding: var(--space-8);
+      display: grid;
+      gap: var(--space-5);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+
+    .metric {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface-2));
+      border: 1px solid color-mix(in srgb, var(--color-primary) 8%, transparent);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: var(--text-xl);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .section {
+      padding: clamp(var(--space-12), 8vw, var(--space-24)) 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: var(--space-5);
+      margin-bottom: var(--space-8);
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: var(--space-3);
+    }
+
+    .section-header p { color: var(--color-text-muted); max-width: 60ch; }
+
+    .featured-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-5);
+      align-items: stretch;
+    }
+
+    .feature-card-large {
+      padding: var(--space-8);
+      min-height: 480px;
+      display: grid;
+      align-content: space-between;
+      background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 34%),
+        linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 92%, white), var(--color-surface));
+    }
+
+    .tag-row,
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .tag,
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface));
+      color: var(--color-primary);
+      border: 1px solid color-mix(in srgb, var(--color-primary) 14%, transparent);
+    }
+
+    .feature-card-large h3,
+    .case-study-card h3,
+    .timeline-item h3,
+    .contact-card h3,
+    .about-copy h2 {
+      font-size: var(--text-xl);
+      line-height: 1.08;
+      margin-bottom: var(--space-4);
+    }
+
+    .case-study-stack {
+      display: grid;
+      gap: var(--space-5);
+    }
+
+    .case-study-card,
+    .card,
+    .contact-card,
+    .timeline-item,
+    .quote-panel {
+      padding: var(--space-6);
+    }
+
+    .case-study-card p,
+    .card p,
+    .timeline-item p,
+    .contact-card p,
+    .about-copy p,
+    .quote-panel p {
+      color: var(--color-text-muted);
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+      padding-top: var(--space-5);
+      margin-top: var(--space-5);
+      border-top: 1px solid var(--color-divider);
+    }
+
+    .meta-label {
+      display: block;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-faint);
+      margin-bottom: var(--space-1);
+    }
+
+    .meta-value {
+      font-size: var(--text-sm);
+      font-weight: 700;
+    }
+
+    .link-arrow {
+      margin-top: var(--space-6);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: var(--text-sm);
+    }
+
+    .principles-grid,
+    .tools-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+
+    .about-aside {
+      display: grid;
+      gap: var(--space-5);
+    }
+
+    .mini-list {
+      list-style: none;
+      display: grid;
+      gap: var(--space-3);
+      color: var(--color-text-muted);
+    }
+
+    .mini-list strong {
+      display: block;
+      color: var(--color-text);
+      font-size: var(--text-sm);
+    }
+
+    .timeline {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .timeline-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: color-mix(in srgb, var(--color-primary) 50%, transparent);
+    }
+
+    .quote-panel {
+      display: grid;
+      gap: var(--space-4);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 6%, var(--color-surface)), var(--color-surface));
+    }
+
+    .quote-panel blockquote {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      line-height: 1.1;
+    }
+
+    .contact-card ul {
+      list-style: none;
+      display: grid;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+    }
+
+    .contact-card li a {
+      color: var(--color-primary);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .footer {
+      padding: var(--space-8) 0 var(--space-12);
+      border-top: 1px solid var(--color-divider);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .featured-layout,
+      .about-layout,
+      .principles-grid,
+      .tools-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 { max-width: 11ch; }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner,
+      .section-header {
+        align-items: start;
+      }
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .hero-panel,
+      .feature-card-large,
+      .case-study-card,
+      .card,
+      .timeline-item,
+      .contact-card,
+      .quote-panel {
+        padding: var(--space-5);
+      }
+      .hero-metrics,
+      .case-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<div class="container">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12C4 7.58172 7.58172 4 12 4H20V12C20 16.4183 16.4183 20 12 20H4V12Z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M8 9.5H15.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M8 14.5H13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>[Your Name] — UX Designer</span>
+      </a>
 
-    <!-- HERO -->
-    <div class="hero">
-        <h1>Enas Mostafa</h1>
-        <p><b>UX Designer | Information Architecture | Platform UX</b></p>
-
-        <p>
-            I design simple, scalable experiences across complex platforms, focusing on 
-            information architecture, system thinking, and reducing fragmentation across tools.
-        </p>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <!-- ABOUT -->
-    <h2>About</h2>
-    <p>
-        I specialize in structuring complex systems into intuitive and scalable experiences. 
-        My work focuses on aligning navigation, improving consistency, and integrating 
-        cross-platform capabilities to create seamless user journeys.
-    </p>
-
-    <!-- PROJECTS -->
-    <h2>Selected Work</h2>
-
-    <div class="projects">
-
-        <div class="card">
-            <h3>GLP Integration Experience</h3>
-            <p>
-                Designed an integrated experience that brings observability insights closer 
-                to services, reducing context switching and improving usability.
-            </p>
-            <a href="glp-integration.html">View Case Study →</a>
+  <main id="main-content">
+    <section class="hero container" id="top">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span>UX Designer Portfolio</span>
+          </div>
+          <h1>Designing clarity for complex products.</h1>
+          <p>
+            I design thoughtful user experiences for platforms, systems, and product teams that need sharper journeys, better decisions, and calmer interfaces. Replace this text with your own positioning statement, industry focus, and value proposition.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">View selected work</a>
+            <a class="btn btn-secondary" href="#contact">Get in touch</a>
+          </div>
         </div>
 
-        <div class="card">
-            <h3>OpsRamp Information Architecture</h3>
-            <p>
-                Restructured OpsRamp features into clear operational stages to improve 
-                scalability, discoverability, and user understanding.
-            </p>
-            <a href="opsramp-ia.html">View Case Study →</a>
+        <aside class="hero-panel reveal" aria-label="Profile summary">
+          <div>
+            <p class="eyebrow" style="margin-bottom: 0.75rem;">Quick snapshot</p>
+            <h2 style="font-size: var(--text-xl); line-height: 1.08; margin-bottom: 0.75rem;">A professional portfolio shell built for strong case studies.</h2>
+            <p>Use this area for your role, years of experience, industries, location, and what kind of opportunities you want to attract.</p>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <span class="meta-label">Experience</span>
+              <strong>+X</strong>
+              <span>Years in UX / product design</span>
+            </div>
+            <div class="metric">
+              <span class="meta-label">Focus</span>
+              <strong>B2B</strong>
+              <span>Enterprise, SaaS, platforms, systems</span>
+            </div>
+            <div class="metric">
+              <span class="meta-label">Strength</span>
+              <strong>IA</strong>
+              <span>Flows, structure, simplification</span>
+            </div>
+            <div class="metric">
+              <span class="meta-label">Style</span>
+              <strong>UX</strong>
+              <span>Research-led and outcome-focused</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container" id="work">
+      <div class="section-header reveal">
+        <div>
+          <p class="eyebrow">Selected case studies</p>
+          <h2>Work that tells the story.</h2>
+          <p>Add 3–6 case studies here. Each card already includes a dedicated URL slot, so you can connect every project to its own GitHub Pages route, portfolio page, Notion page, or external case study.</p>
         </div>
+      </div>
 
-        <div class="card">
-            <h3>Platform UX & Design Systems</h3>
-            <p>
-                Established consistent naming, navigation, and shared patterns across 
-                storage, networking, and compute services.
-            </p>
-            <a href="platform-ux.html">View Case Study →</a>
+      <div class="featured-layout">
+        <article class="feature-card-large reveal" aria-labelledby="case-study-featured">
+          <div>
+            <div class="tag-row">
+              <span class="tag">Featured</span>
+              <span class="tag">Enterprise UX</span>
+            </div>
+          </div>
+          <div>
+            <h3 id="case-study-featured">[Case Study 01 Title]</h3>
+            <p>Write a sharp overview here: the product context, the challenge, the user group, and the outcome. Keep it concise, credible, and measurable.</p>
+            <div class="case-meta">
+              <div>
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Lead UX Designer</span>
+              </div>
+              <div>
+                <span class="meta-label">Scope</span>
+                <span class="meta-value">Research · IA · UI</span>
+              </div>
+              <div>
+                <span class="meta-label">Outcome</span>
+                <span class="meta-value">Insert metric here</span>
+              </div>
+            </div>
+            <a class="link-arrow" href="https://your-github-pages-url/case-study-01" target="_blank" rel="noopener noreferrer">Open case study 01 →</a>
+          </div>
+        </article>
+
+        <div class="case-study-stack">
+          <article class="case-study-card reveal">
+            <div class="chip-row">
+              <span class="chip">Product Strategy</span>
+            </div>
+            <h3>[Case Study 02 Title]</h3>
+            <p>Use this block for a transformation project, redesign initiative, workflow improvement, dashboard experience, onboarding journey, or service redesign.</p>
+            <a class="link-arrow" href="https://your-github-pages-url/case-study-02" target="_blank" rel="noopener noreferrer">Open case study 02 →</a>
+          </article>
+
+          <article class="case-study-card reveal">
+            <div class="chip-row">
+              <span class="chip">UX Research</span>
+            </div>
+            <h3>[Case Study 03 Title]</h3>
+            <p>Describe the user problem, your design approach, and how the work improved usability, understanding, adoption, trust, or operational efficiency.</p>
+            <a class="link-arrow" href="https://your-github-pages-url/case-study-03" target="_blank" rel="noopener noreferrer">Open case study 03 →</a>
+          </article>
         </div>
+      </div>
+    </section>
 
+    <section class="section container" id="about">
+      <div class="about-layout">
+        <aside class="about-aside reveal">
+          <div class="card">
+            <p class="eyebrow" style="margin-bottom: 0.75rem;">Profile</p>
+            <ul class="mini-list">
+              <li><strong>Location</strong>[Your city, country]</li>
+              <li><strong>Current role</strong>[Your current title or freelance status]</li>
+              <li><strong>Industries</strong>[SaaS, fintech, health, logistics, enterprise, etc.]</li>
+              <li><strong>Tools</strong>[Figma, FigJam, Miro, Maze, Dovetail, etc.]</li>
+            </ul>
+          </div>
+          <div class="quote-panel">
+            <p class="eyebrow" style="margin-bottom: 0;">Design point of view</p>
+            <blockquote>“Replace this with one confident sentence that sounds like you and sums up your design philosophy.”</blockquote>
+          </div>
+        </aside>
+
+        <div class="about-copy reveal">
+          <p class="eyebrow">About</p>
+          <h2>Helping products become easier to understand, use, and trust.</h2>
+          <p>Use this section for your professional introduction. Talk about the types of problems you solve, the products you enjoy working on, the teams you collaborate best with, and the impact you care about.</p>
+          <p>You can also mention your edge here: information architecture, systems thinking, user research, design operations, stakeholder facilitation, service design, or simplifying complex B2B workflows.</p>
+          <p>This layout is built to feel warm, professional, and energetic without looking noisy. It should work well as a GitHub-hosted portfolio homepage while each deeper case study lives on its own separate link.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="approach">
+      <div class="section-header reveal">
+        <div>
+          <p class="eyebrow">Approach</p>
+          <h2>How I usually work.</h2>
+          <p>Swap these cards with your real process. The goal is to show structure and confidence, not to over-explain every step.</p>
+        </div>
+      </div>
+
+      <div class="principles-grid">
+        <article class="card reveal">
+          <h3>Research with purpose</h3>
+          <p>Explain how you frame the problem, gather insight, and separate assumptions from evidence before moving into solutions.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Structure before screens</h3>
+          <p>Use this card to highlight IA, task flows, content hierarchy, journey mapping, or systems thinking.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Design with outcomes</h3>
+          <p>Add how you measure success: efficiency, adoption, comprehension, conversion, usability, or business impact.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="experience">
+      <div class="section-header reveal">
+        <div>
+          <p class="eyebrow">Experience highlights</p>
+          <h2>Relevant roles and milestones.</h2>
+          <p>Keep it selective. A concise timeline often reads stronger than a dense CV dump.</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span class="meta-label">20XX — Present</span>
+          <h3>[Company / Role]</h3>
+          <p>Write 2–3 lines on what you owned, who you collaborated with, and the kind of product or platform challenges you solved.</p>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="meta-label">20XX — 20XX</span>
+          <h3>[Company / Role]</h3>
+          <p>Highlight a meaningful achievement, redesign, or strategic contribution rather than listing every task.</p>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="meta-label">Optional</span>
+          <h3>[Award, speaking, mentoring, writing, certification]</h3>
+          <p>Add anything that strengthens your credibility as a UX designer and gives this portfolio more personality.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="toolkit">
+      <div class="section-header reveal">
+        <div>
+          <p class="eyebrow">Capabilities</p>
+          <h2>Methods, tools, and craft.</h2>
+        </div>
+      </div>
+
+      <div class="tools-grid">
+        <article class="card reveal">
+          <h3>Core UX skills</h3>
+          <p>[User research, wireframing, prototyping, usability testing, journey mapping, service blueprinting, design systems]</p>
+        </article>
+        <article class="card reveal">
+          <h3>Tools</h3>
+          <p>[Figma, FigJam, Miro, Notion, Jira, Hotjar, Dovetail, Maze, Adobe CC, etc.]</p>
+        </article>
+        <article class="card reveal">
+          <h3>Collaboration</h3>
+          <p>[Stakeholder workshops, cross-functional alignment, product strategy, developer handoff, design critique, facilitation]</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="contact">
+      <div class="section-header reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Ready for the right next project.</h2>
+          <p>Make it easy for recruiters, hiring managers, and collaborators to reach you. Replace every placeholder below with your real links.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card reveal">
+          <h3>Contact details</h3>
+          <p>Use direct links so people can move quickly from interest to conversation.</p>
+          <ul>
+            <li>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-link</a></li>
+            <li>GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">github.com/your-username</a></li>
+          </ul>
+        </article>
+
+        <article class="contact-card reveal">
+          <h3>Case study URLs</h3>
+          <p>Suggested structure for your GitHub-hosted portfolio and separate case study pages:</p>
+          <ul>
+            <li><a href="https://your-github-pages-url/" target="_blank" rel="noopener noreferrer">Main portfolio home</a></li>
+            <li><a href="https://your-github-pages-url/case-study-01" target="_blank" rel="noopener noreferrer">Case study 01</a></li>
+            <li><a href="https://your-github-pages-url/case-study-02" target="_blank" rel="noopener noreferrer">Case study 02</a></li>
+            <li><a href="https://your-github-pages-url/case-study-03" target="_blank" rel="noopener noreferrer">Case study 03</a></li>
+          </ul>
+        </article>
+
+        <article class="contact-card reveal">
+          <h3>Optional extras</h3>
+          <p>Add your resume link, scheduling link, language skills, availability, or a short note about open roles and freelance work.</p>
+          <ul>
+            <li><a href="https://your-github-pages-url/resume.pdf" target="_blank" rel="noopener noreferrer">Resume / CV</a></li>
+            <li><a href="https://cal.com/your-link" target="_blank" rel="noopener noreferrer">Scheduling link</a></li>
+            <li><a href="https://medium.com/@your-link" target="_blank" rel="noopener noreferrer">Writing / articles</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Built as a professional UX portfolio homepage template. Replace the placeholder content with your real profile, project summaries, and case study URLs.</p>
     </div>
+  </footer>
 
-    <!-- SKILLS -->
-    <h2>Skills</h2>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
 
-    <div class="skills">
-        <div class="skill">Information Architecture</div>
-        <div class="skill">UX Design</div>
-        <div class="skill">Interaction Design</div>
-        <div class="skill">Design Systems</div>
-        <div class="skill">Figma</div>
-        <div class="skill">Platform Thinking</div>
-    </div>
+      const setIcon = () => {
+        toggle.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4.5"/><path d="M12 2V5"/><path d="M12 19V22"/><path d="M4.93 4.93L7.05 7.05"/><path d="M16.95 16.95L19.07 19.07"/><path d="M2 12H5"/><path d="M19 12H22"/><path d="M4.93 19.07L7.05 16.95"/><path d="M16.95 7.05L19.07 4.93"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>';
+        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      };
 
-    <!-- CONTACT -->
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
+      setIcon();
+      toggle.addEventListener('click', function () {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        setIcon();
+      });
 
-    <footer>
-        © 2026 Enas Mostafa
-    </footer>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
 
-</div>
-
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    })();
+  </script>
 </body>
 </html>
