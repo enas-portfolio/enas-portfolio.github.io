@@ -181,6 +181,10 @@
       align-items: start;
     }
 
+#top .hero-grid > div:first-child {
+  align-self: start;
+}
+
     .eyebrow {
       display: inline-flex;
       align-items: top;
@@ -253,6 +257,15 @@ font-family: var(--font-display);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-sm);
     }
+
+.snapshot-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 1.3vw, 1.6rem);
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
 
     .hero-panel {
       padding: var(--space-8);
