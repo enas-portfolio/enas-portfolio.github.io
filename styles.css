@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/* CSS Document */
+
 :root, [data-theme="light"] {
       --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
       --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
@@ -41,7 +44,7 @@
       --shadow-md: 0 8px 24px rgba(40, 37, 29, 0.08);
       --shadow-lg: 0 20px 44px rgba(40, 37, 29, 0.12);
       --content-default: 1120px;
-      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-display: 'Boska', Georgia, serif;
       --font-body: 'Satoshi', Inter, sans-serif;
       --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -166,19 +169,21 @@
     }
 
     .hero {
-      padding: clamp(var(--space-16), 10vw, var(--space-32)) 0 var(--space-16);
+		
+     padding: clamp(var(--space-10), 6vw, var(--space-20)) 0 var(--space-12);
+
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: var(--space-8);
-      align-items: end;
+      align-items: start;
     }
 
-  .eyebrow {
+    .eyebrow {
       display: inline-flex;
-      align-items: top !important;
+      align-items: top;
       gap: var(--space-2);
       font-size: var(--text-xs);
       letter-spacing: 0.12em;
@@ -188,13 +193,17 @@
     }
 
     .hero h1 {
-     font-family: var(--font-display);
+      
+
+font-family: var(--font-display);
   font-size: clamp(2.2rem, 3.8vw, 4rem);
   line-height: 1.12;
   letter-spacing: -0.01em;
   max-width: 16ch; /* KEY FIX */
   margin-bottom: var(--space-6);
   font-weight: 500;
+
+
     }
 
     .hero p {
