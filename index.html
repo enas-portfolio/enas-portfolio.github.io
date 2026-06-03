@@ -1,67 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enas Mostafa – UX / IA Portfolio</title>
+    <title>Enas Mostafa | UX Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f8f9fb;
+            color: #222;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .hero {
+            margin-bottom: 40px;
+        }
+
+        .projects {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #0066ff;
+            font-weight: bold;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #e8f0ff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 
-<body style="font-family: Arial; max-width: 800px; margin: auto; line-height: 1.6;">
+<body>
 
-    <h1>Enas Mostafa</h1>
-    <h3>UX Designer | Information Architecture | Product Thinking</h3>
+<div class="container">
 
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Enas Mostafa</h1>
+        <p><b>UX Designer | Information Architecture | Platform UX</b></p>
+
+        <p>
+            I design simple, scalable experiences across complex platforms, focusing on 
+            information architecture, system thinking, and reducing fragmentation across tools.
+        </p>
+    </div>
+
+    <!-- ABOUT -->
+    <h2>About</h2>
     <p>
-        I design simple and scalable experiences across complex platforms, 
-        focusing on information architecture, consistency, and integration.
+        I specialize in structuring complex systems into intuitive and scalable experiences. 
+        My work focuses on aligning navigation, improving consistency, and integrating 
+        cross-platform capabilities to create seamless user journeys.
     </p>
 
-    <hr>
+    <!-- PROJECTS -->
+    <h2>Selected Work</h2>
 
-    <h2>About Me</h2>
-    <p>
-        I work on designing structured and intuitive experiences, with a strong focus on
-        information architecture and cross-platform integration. My approach is to simplify
-        complexity and bring clarity to how users navigate systems.
-    </p>
+    <div class="projects">
 
-    <hr>
+        <div class="card">
+            <h3>GLP Integration Experience</h3>
+            <p>
+                Designed an integrated experience that brings observability insights closer 
+                to services, reducing context switching and improving usability.
+            </p>
+            <a href="glp-integration.html">View Case Study →</a>
+        </div>
 
-    <h2>Featured Work</h2>
+        <div class="card">
+            <h3>OpsRamp Information Architecture</h3>
+            <p>
+                Restructured OpsRamp features into clear operational stages to improve 
+                scalability, discoverability, and user understanding.
+            </p>
+            <a href="opsramp-ia.html">View Case Study →</a>
+        </div>
 
-    <h3>GLP Integration Experience</h3>
-    <p>
-        Designed an integrated experience that brings operational insights closer to services,
-        reducing context switching and improving usability.
-    </p>
+        <div class="card">
+            <h3>Platform UX & Design Systems</h3>
+            <p>
+                Established consistent naming, navigation, and shared patterns across 
+                storage, networking, and compute services.
+            </p>
+            <a href="platform-ux.html">View Case Study →</a>
+        </div>
 
-    <h3>OpsRamp Information Architecture</h3>
-    <p>
-        Reorganized features into clear operational stages (resources, observability, operations)
-        to improve usability and scalability.
-    </p>
+    </div>
 
-    <h3>Design Systems & Platform UX</h3>
-    <p>
-        Focused on creating consistent naming, navigation patterns, and shared experiences 
-        across services such as storage, networking, and compute.
-    </p>
-
-    <hr>
-
+    <!-- SKILLS -->
     <h2>Skills</h2>
-    <ul>
-        <li>Information Architecture</li>
-        <li>User Experience Design</li>
-        <li>Interaction Design</li>
-        <li>Design Systems</li>
-        <li>Figma</li>
-    </ul>
 
-    <hr>
+    <div class="skills">
+        <div class="skill">Information Architecture</div>
+        <div class="skill">UX Design</div>
+        <div class="skill">Interaction Design</div>
+        <div class="skill">Design Systems</div>
+        <div class="skill">Figma</div>
+        <div class="skill">Platform Thinking</div>
+    </div>
 
+    <!-- CONTACT -->
     <h2>Contact</h2>
     <p>Email: your@email.com</p>
 
+    <footer>
+        © 2026 Enas Mostafa
+    </footer>
+
+</div>
+
 </body>
 </html>
-``
